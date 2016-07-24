@@ -1,0 +1,20 @@
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+@import './lib/_normalize';
+@import './lib/_react_datetime';
+
+@import './_listings';
