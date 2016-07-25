@@ -2,7 +2,7 @@ class Listing < ApplicationRecord
   self.per_page = 25
 
   # Default to 15 miles
-  DEFAULT_DISTANCE = 15
+  DEFAULT_DISTANCE = 5
 
   validates :starts_at, presence: true
   validates :ends_at, presence: true

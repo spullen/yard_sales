@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import scriptLoader from 'react-async-script-loader';
 
-import { refresh } from '../actions/location';
+import { refresh, query } from '../actions/location';
 import { loadListings } from '../actions/listings';
 
+import Search from './Search';
+import Listings from './Listings';
 import Map from './Map';
 
 class ListingsContainer extends Component {
@@ -28,15 +30,18 @@ class ListingsContainer extends Component {
     }
   }
 
-  // todo handle linking between sidebar and map (when clicking sidebar it opens info window on map view)
+  // TODO: handle linking between sidebar and map (when clicking sidebar it opens info window on map view)
 
   render() {
-    const { latitude, longitude, listings } = this.props;
+    const { latitude, longitude, listings, query, refreshLocation } = this.props;
 
     return (
       <div className="listings-container">
         <div className="listings">
-          <div className="sidebar" />
+          <div className="sidebar">
+            <Search query={query} refreshLocation={refreshLocation} />
+            <Listings listings={listings} />
+          </div>
           <Map latitude={latitude} longitude={longitude} listings={listings} />
         </div> 
       </div>
@@ -56,6 +61,7 @@ const mapStateToProps = (state, routerProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     refreshLocation: bindActionCreators(refresh, dispatch),
+    query: bindActionCreators(query, dispatch),
     loadListings: bindActionCreators(loadListings, dispatch)
   };
 };
