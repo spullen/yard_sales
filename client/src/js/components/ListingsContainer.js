@@ -36,14 +36,14 @@ class ListingsContainer extends Component {
     const { latitude, longitude, listings, query, refreshLocation } = this.props;
 
     return (
-      <div className="listings-container">
-        <div className="listings">
-          <div className="sidebar">
-            <Search query={query} refreshLocation={refreshLocation} />
-            <Listings listings={listings} />
-          </div>
+      <div className="container">
+        <div className="sidebar">
+          <Search query={query} refreshLocation={refreshLocation} />
+          <Listings listings={listings} />
+        </div>
+        <div className="main">
           <Map latitude={latitude} longitude={longitude} listings={listings} />
-        </div> 
+        </div>
       </div>
     );
   }

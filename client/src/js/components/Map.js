@@ -98,11 +98,7 @@ class Map extends Component {
   }
   
   render() {
-    return (
-      <div className="map-container">
-        <div className="map" ref={this.renderMap.bind(this)}>Loading...</div>
-      </div>
-    )
+    return <div className="map" ref={this.renderMap.bind(this)}>Loading...</div>;
   }
 }
 
