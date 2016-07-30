@@ -23,6 +23,9 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@import './_search';
+@import './_listings';
+
 #app {
   height: 100%;
   display: flex;
@@ -98,7 +101,7 @@ header {
   
   .sidebar {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: hidden;
     border-right: 1px solid #ccc;
     
     @media all and (max-width: 1023px) {

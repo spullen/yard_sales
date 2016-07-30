@@ -13,7 +13,7 @@ class listings extends Component {
     });
 
     return (
-      <div className="listings-list">
+      <div className="listings">
         {(() => {
           if(listingItems.length > 0) {
             return listingItems;

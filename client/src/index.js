@@ -6,8 +6,9 @@ require('es6-promise').polyfill();
 
 import axios from 'axios';
 
-// TODO: configure this based on environment
-axios.defaults.baseURL = 'http://localhost:3000';
+if(process.env.NODE_ENV === undefined || process.env.NODE_ENV !== 'production') {
+  axios.defaults.baseURL = 'http://localhost:3000';
+}
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -30,6 +31,10 @@ const store = createStore(
 );
 
 const history = syncHistoryWithStore(browserHistory, store);
+
+// TODO: instead of using the async script loader library, would be better to do it here
+// Create script tag with src and async attribute. Add onload (and the IE8 and older version) to the element
+// Pass the store into this init function which lets the app know that the script has been loaded
 
 import App from './js/components/App';
 import ListingsContainer from './js/components/ListingsContainer';
