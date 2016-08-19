@@ -40,6 +40,12 @@ class Search extends Component {
     }
   }
 
+  handleInputQuery(e) {
+    if(e && e.charCode === 13) {
+      this.handleQuery(e);
+    }
+  }
+
   resetToCurrentLocation(e) {
     e.preventDefault();
     this.props.refreshLocation();
@@ -48,15 +54,9 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
-        <div>
-          <form onSubmit={this.handleQuery.bind(this)}>
-            <input type="text" ref={(el) => this.search = el} />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-        <div>
-          <a href="#" className="current-location-btn" onClick={this.resetToCurrentLocation.bind(this)}><i className="fa fa-crosshairs" /></a>
-        </div>
+        <input type="text" ref={(el) => this.search = el} onKeyPress={this.handleInputQuery.bind(this)} />
+        <a className="btn search-btn" onClick={this.handleQuery.bind(this)}>Search</a>
+        <a className="btn current-location-btn" onClick={this.resetToCurrentLocation.bind(this)}><i className="fa fa-crosshairs" /></a>
       </div>
     );
   }
@@ -67,5 +67,5 @@ Search.propTypes = {
   refreshLocation: PropTypes.func.isRequired
 };
 
-// TODO the google maps should just be loaded at the app level so shared components can know
+// TODO the google maps should just be loaded at the app level so shared components can know. see note in index.js
 export default scriptLoader('https://maps.googleapis.com/maps/api/js')(Search);

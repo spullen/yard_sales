@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-y: hidden;
+  
+  @media all and (max-width: 1023px) {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    flex: 1;
+    overflow-y: hidden;
+    border-right: 1px solid #8d8d8d;
+    
+    @media all and (max-width: 1023px) {
+      flex: 1 auto;
+      overflow-y: hidden;
+      border-right: none;
+      border-bottom: 1px solid #8d8d8d;
+    }
+    
+    @media all and (min-width: 1024px) {
+      flex: 1 25%;
+    }
+  }
+  
+  .main {
+    flex: 1 100%;
+    position: relative;
+
+    @media all and (min-width: 1024px) {
+      flex: 4 75%;
+    }
+    
+    .map {
+      height: 100%;
+    }
+  }
+}

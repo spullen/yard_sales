@@ -2,7 +2,22 @@
   height: 100%;
   overflow-y: auto;
 
-  .listing-item {
+  @media all and (max-width: 1023px) {
+    display: none;
+  }
 
+  .listing-item {
+    padding: 1em;
+    border-bottom: 1px solid #8d8d8d;
+    transition: all 0.25s ease-in-out;
+
+    h3 {
+      margin: 0 0 0.5em 0;
+      padding: 0;
+    }
+
+    &:hover {
+      background-color: rgba(204,242,255,0.3);
+    }
   }
 }

@@ -14,9 +14,7 @@ class ListingItem extends Component {
           }
         })()}
         <h3>{address}</h3>
-        <div>
-          {moment(starts_at).format('MM/DD/YYYY hh:mm a')} to {moment(ends_at).format('MM/DD/YYYY hh:mm a')}
-        </div>
+        <h3 className="listing-item-times">{moment(starts_at).format('MM/DD/YYYY hh:mm a')} to {moment(ends_at).format('MM/DD/YYYY hh:mm a')}</h3>
         <div>
           {early_birds_allowed ? 'Early birds allowed' : 'No early birds'}
         </div>

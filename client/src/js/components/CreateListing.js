@@ -56,6 +56,8 @@ class CreateListing extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    // TODO: add captcha
+
     const errors = validate(this.state, constraints, {fullMessages: false});
 
     if(errors) {
@@ -129,7 +131,7 @@ class CreateListing extends Component {
     const {title, description, startsAt, endsAt, earlyBirdsAllowed, street1, street2, city, state, postalCode} = this.state;
 
     return (
-      <div>
+      <div className="create-listing">
         <h2>Add Listing</h2>
         <form onSubmit={this.handleSubmit.bind(this)} autoComplete={false}>
           <div className={`form-group ${this.renderErrorClass('title')}`}>
