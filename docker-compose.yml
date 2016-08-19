@@ -1,0 +1,24 @@
+version: '2'
+services:
+  redis:
+    image: redis
+  db:
+    image: postgres:9.5
+    ports:
+      - "5432"
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - redis
+    env_file: ./.prod.env
+    command: puma -C config/puma.rb
+  sidekiq:
+    build: .
+    links:
+      - db
+      - redis
+    env_file: ./.prod.env
+    command: sidekiq

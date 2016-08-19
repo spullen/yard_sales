@@ -1,0 +1,6 @@
+.git
+.dockerignore
+Gemfile.lock
+.byebug_history
+/log/*
+/tmp/*

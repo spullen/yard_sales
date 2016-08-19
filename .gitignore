@@ -23,3 +23,5 @@ build/
 dist/
 
 .DS_Store
+
+.prod.env
