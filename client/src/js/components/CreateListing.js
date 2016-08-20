@@ -135,7 +135,7 @@ class CreateListing extends Component {
         <h2>Add Listing</h2>
         <form onSubmit={this.handleSubmit.bind(this)} autoComplete={false}>
           <div className={`form-group ${this.renderErrorClass('title')}`}>
-            <label>Title:</label>
+            <label className="control-label">Title:</label>
             <div className="form-control">
               <input type="text" name="title" defaultValue={title} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('title')}
@@ -143,7 +143,7 @@ class CreateListing extends Component {
           </div>
           
           <div className={`form-group ${this.renderErrorClass('startsAt')}`}>
-            <label>Starts:</label>
+            <label className="control-label">Starts:</label>
             <div className="form-control">
               <Datetime inputProps={{name: 'startsAt'}} 
                         defaultValue={startsAt} 
@@ -156,7 +156,7 @@ class CreateListing extends Component {
           </div>
 
           <div className={`form-group ${this.renderErrorClass('endsAt')}`}>
-            <label>Ends:</label>
+            <label className="control-label">Ends:</label>
             <div className="form-control">
               <Datetime inputProps={{name: 'endsAt'}} 
                         defaultValue={endsAt} 
@@ -168,16 +168,14 @@ class CreateListing extends Component {
             </div>
           </div>
 
-          <div className={`form-group ${this.renderErrorClass('earlyBirdsAllowed')}`}>
-            <label>Early Birds Allowed?:</label>
-            <div className="form-control">
-              <input type="checkbox" name="earlyBirdsAllowed" defaultChecked={earlyBirdsAllowed} onChange={this.handleOnChange.bind(this)} />
-              {this.renderErrorMessage('earlyBirdsAllowed')}
-            </div>
+          <div className="form-group">
+            <label>
+              <input type="checkbox" name="earlyBirdsAllowed" defaultChecked={earlyBirdsAllowed} onChange={this.handleOnChange.bind(this)} /> Early Birds Allowed?
+            </label>
           </div>
 
           <div className={`form-group ${this.renderErrorClass('street1')}`}>
-            <label>Address Line 1:</label>
+            <label className="control-label">Address Line 1:</label>
             <div className="form-control">
               <input type="text" name="street1" defaultValue={street1} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('street1')}
@@ -185,7 +183,7 @@ class CreateListing extends Component {
           </div>
 
           <div className={`form-group ${this.renderErrorClass('street2')}`}>
-            <label>Address Line 2:</label>
+            <label className="control-label">Address Line 2:</label>
             <div className="form-control">
               <input type="text" name="street2" defaultValue={street2} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('street2')}
@@ -193,7 +191,7 @@ class CreateListing extends Component {
           </div>
 
           <div className={`form-group ${this.renderErrorClass('city')}`}>
-            <label>City:</label>
+            <label className="control-label">City:</label>
             <div className="form-control">
               <input type="text" name="city" defaultValue={city} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('city')}
@@ -201,7 +199,7 @@ class CreateListing extends Component {
           </div>
 
           <div className={`form-group ${this.renderErrorClass('state')}`}>
-            <label>State:</label>
+            <label className="control-label">State:</label>
             <div className="form-control">
               <Select name="state" value={state} options={states} onChange={(val) => this.handleOnSelectChange('state', val)} />
               {this.renderErrorMessage('state')}
@@ -209,20 +207,20 @@ class CreateListing extends Component {
           </div>
 
           <div className={`form-group ${this.renderErrorClass('postalCode')}`}>
-            <label>Postal Code:</label>
+            <label className="control-label">Postal Code:</label>
             <div className="form-control">
               <input type="text" name="postalCode" defaultValue={postalCode} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('postalCode')}
             </div>
           </div>
           <div className={`form-group ${this.renderErrorClass('description')}`}>
-            <label>Description:</label>
+            <label className="control-label">Description:</label>
             <div className="form-control">
               <textarea name="description" defaultValue={description} onChange={this.handleOnChange.bind(this)} />
               {this.renderErrorMessage('description')}
             </div>
           </div>
-          <div className={`form-group ${this.renderErrorClass('')}`}>
+          <div className="form-group">
             <div className="form-control">
               <button type="submit">Add Listing</button>
             </div>

@@ -1,0 +1,46 @@
+.form-group {
+  margin: 1em 0;
+
+  &.has-error {
+    color: #e9573f;
+  }
+
+  .control-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .form-control {
+    textarea, input[type="text"] {
+      height: 36px;
+      line-height: 2em;
+      font-size: 1em;
+      padding-left: 0.65em;
+      padding-right: 0.65em;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      padding: 0.75em 1.5em;
+      background-color: #337ab7;
+      border: 1px solid #2e6da4;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #2e6da4;
+      }
+    }
+  }
+}
