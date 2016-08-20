@@ -1,6 +1,10 @@
 # Yard Sale Finder
 
-Simple app to play around with React and Google Maps
+Simple app to play around with:
+
+* React
+* webpack
+* async google maps with React
 
 ## Future Enhancements
 
