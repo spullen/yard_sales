@@ -1,5 +1,6 @@
+puts "RAILS_ENV #{Rails.env}"
 if Rails.env.production?
-  redis_url = "redis://#{ENV['DB_PORT_5432_TCP_ADDR']}:#{ENV['DB_PORT_5432_TCP_PORT']}/0"
+  redis_url = "redis://redis:6379/0"
 
   Sidekiq.configure_server do |config|
     config.redis = { url: redis_url }
